@@ -115,14 +115,127 @@ function sumToN(n) {
 
 **Pseudocode**:
 ```
-
+1. Input n
+2. Set result = 1
+3. For i = 1 to n:
+    result = result * i
+4. Output result
 ```
 
 **JavaScript**:
 ```javascript
-
+function factorial(x) {
+    let result = 1;
+    for (let i = 1; i <= x; i++) {
+        result *= i
+    };
+    return result;
+}
 ```
-
+Algorithms
 ---
+```javascript
+function rockPaperScissors(input) {
+  const random = Math.floor(Math.random() * 100);
+  let opponentChoice;
+  let outcome;
 
+  for (let i = 0; i <= random; i++) {
+    if (i % 3 == 0) {
+      opponentChoice = "rock";
+    } else if (i % 2 == 0) {
+      opponentChoice = "paper";
+    } else {
+      opponentChoice = "scissors";
+    }
+  }
+
+  if (opponentChoice == "rock") {
+    if (input == 1) {
+      outcome = "win";
+    } else if (input == 2) {
+      outcome = "lose";
+    } else {
+      outcome = "draw";
+    }
+  } else if (opponentChoice == "paper") {
+    if (input == 2) {
+      outcome = "win";
+    } else if (input == 0) {
+      outcome = "lose";
+    } else {
+      outcome = "draw";
+    }
+  } else {
+    if (input == 0) {
+      outcome = "win";
+    } else if (input == 1) {
+      outcome = "lose";
+    } else {
+      outcome = "draw";
+    }
+  }
+  history.push(outcome);
+
+  DOMSelectors.history.innerHTML = "";
+  DOMSelectors.content.insertAdjacentHTML(
+    "afterbegin",
+    `<div class="card" id="${outcome}">
+    <p>Your choice: ${returnInput(input).toUpperCase()}</p>
+    <p>Opponent choice: ${opponentChoice.toUpperCase()}</p>
+    <h4>${outcome.toUpperCase()}</h4>
+    </div>
+    `
+  );
+}
+```
+```
+This is an algorithm due to there being sequencing and instances of selection and iteration within.
+```
+```javascript
+  for (let i = 0; i <= random; i++) {
+    //stuff in here
+  }
+```
+```
+This is iteration as it uses a for loop to set "i" to 0, then add one until it reaches "random".
+```
+```javascript
+  if (i % 3 == 0) {
+      opponentChoice = "rock";
+    } else if (i % 2 == 0) {
+      opponentChoice = "paper";
+    } else {
+      opponentChoice = "scissors";
+    }
+
+  if (opponentChoice == "rock") {
+    if (input == 1) {
+      outcome = "win";
+    } else if (input == 2) {
+      outcome = "lose";
+    } else {
+      outcome = "draw";
+    }
+  } else if (opponentChoice == "paper") {
+    if (input == 2) {
+      outcome = "win";
+    } else if (input == 0) {
+      outcome = "lose";
+    } else {
+      outcome = "draw";
+    }
+  } else {
+    if (input == 0) {
+      outcome = "win";
+    } else if (input == 1) {
+      outcome = "lose";
+    } else {
+      outcome = "draw";
+    }
+  }
+```
+```
+This is selection as it uses if, else if, and else statements to take in a condition, then make decisions based on said condition. In this example, the condition is the opponent's choice. Another condition is the player's input or the player's choice. Based on these decisions, an outcome is produced.
+```
 
