@@ -25,15 +25,12 @@ function newFactorial(y) {
 
 function occupiedSpaces(n,x,y) {
     let sameSpaces = 0;
-    let a = Array.from(x);
-    let b = Array.from(y);
-    for(let i = 0; i <=n; i++) {
-        if(a[i] == b[i] == "C") {
+    for(let i = 0; i < n; i++) {
+        if(x[i] == "C" && y[i] == "C") {
             sameSpaces += 1
-            
         }
     };
     return sameSpaces;
 }
 
-console.log(occupiedSpaces(5, "..C..", "C.C.."))
+console.log(occupiedSpaces(5, "CCCCC", "C.C.."))
