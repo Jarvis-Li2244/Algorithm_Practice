@@ -36,9 +36,9 @@ function occupiedSpaces(n,x,y) {
 console.log(occupiedSpaces(5, "CCCCC", "C.C.."))
 
 // Psuedocode for Decimal to Binary
-function binary(a) {
+function dec_binary(a) {
     let number = ""
-    let y = 2
+    let y = 1
     while (y <= a) {
         y *= 2
     }
@@ -57,11 +57,10 @@ function binary(a) {
     } else {
         number += "0"
     }
-    let x = Number(number)
-    return x
+    return Number(number)
 }
 
-function decimal(a) {
+function bin_decimal(a) {
     let x = String(a)
     let number = 0
     for (let i = 0; i < x.length; i++) {
@@ -71,5 +70,4 @@ function decimal(a) {
     }
     return number
 }
-
 
